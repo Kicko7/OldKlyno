@@ -14,9 +14,9 @@ export async function POST(request: Request) {
   try {
     const profile = await getServerProfile()
 
-    checkApiKey(profile.google_gemini_api_key, "Google")
+    checkApiKey(profile.google_api_key, "Google")
 
-    const genAI = new GoogleGenerativeAI(profile.google_gemini_api_key || "")
+    const genAI = new GoogleGenerativeAI(profile.google_api_key || "")
     const googleModel = genAI.getGenerativeModel({ model: chatSettings.model })
 
     const lastMessage = messages.pop()

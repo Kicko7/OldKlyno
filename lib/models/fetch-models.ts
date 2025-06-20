@@ -27,7 +27,7 @@ export const fetchHostedModels = async (profile: Tables<"profiles">) => {
       let providerKey: keyof typeof profile
 
       if (provider === "google") {
-        providerKey = "google_gemini_api_key"
+        providerKey = "google_api_key"
       } else if (provider === "azure") {
         providerKey = "azure_openai_api_key"
       } else {
